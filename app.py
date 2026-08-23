@@ -155,7 +155,7 @@ def get_api_endpoint(region):
         "VN": "https://clientbp.ggpolarbear.com/GetPlayerPersonalShow",
         "ME": "https://clientbp.ggpolarbear.com/GetPlayerPersonalShow",
         "TH": "https://clientbp.ggpolarbear.com/GetPlayerPersonalShow",
-        "default": "https://clientbp.ggblueshark.com/GetPlayerPersonalShow"
+        "default": "https://clientbp.ggpolarbear.com/GetPlayerPersonalShow"
     }
     return endpoints.get(region, endpoints["default"])
 
