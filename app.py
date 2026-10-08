@@ -183,7 +183,7 @@ def apis(idd, region):
         'Authorization': f'Bearer {token}',
         'X-Unity-Version': '2018.4.11f1',
         'X-GA': 'v1 1',
-        'ReleaseVersion': 'OB54',
+        'ReleaseVersion': 'OB55',
         'Content-Type': 'application/x-www-form-urlencoded',
     }
     
@@ -398,7 +398,7 @@ def get_wishlist_info():
             'Authorization': f'Bearer {token}',
             'X-Unity-Version': '2018.4.11f1',
             'X-GA': 'v1 1',
-            'ReleaseVersion': 'OB54',
+            'ReleaseVersion': 'OB55',
             'Content-Type': 'application/x-www-form-urlencoded',
         }
 
