@@ -87,21 +87,21 @@ def extract_token_from_response(data, region):
     
     if "jwt_token" in data:
         return data["jwt_token"]
-    if "token" in data:
-        return data["token"]
+    if "Token" in data:
+        return data["Token"]
         
-    if data.get("success") is True and "token" in data:
-        return data["token"]
+    if data.get("success") is True and "Token" in data:
+        return data["Token"]
     
     if region == "BD":
         if data.get('status') in ['success', 'live']:
-            return data.get('token')
+            return data.get('Token')
     elif region in ["BR", "US", "SAC", "BD", "PK", "VN", "ME", "TH"]:
-        if 'token' in data:
-            return data['token']
+        if 'Token' in data:
+            return data['Token']
     else:
         if data.get('status') == 'success':
-            return data.get('token')
+            return data.get('Token')
     
     return None
 
@@ -120,8 +120,7 @@ def ensure_jwt_token_sync(region):
         print(f"[JWT] Token missing or expired for region {region}. Fetching...")
 
         # Updated API endpoint provided
-        url = "https://najmi-jwt-toekn-gen.vercel.app/api/get_jwt?guest_uid=6691367376&guest_password=JayGmr_nU152sZ0"
-
+        url = "https://sheihk-jwt-ob55.up.railway.app/token?uid=8025181465&pass=E64906492B2F3504B3D737E3752515826265A98041864859D7A47476B3526036"
         try:
             response = requests.get(url, timeout=10)
             response.raise_for_status()
@@ -181,7 +180,7 @@ def apis(idd, region):
         'Connection': 'Keep-Alive',
         'Expect': '100-continue',
         'Authorization': f'Bearer {token}',
-        'X-Unity-Version': '2018.4.11f1',
+        'X-Unity-Version': '2018.4.12f1',
         'X-GA': 'v1 1',
         'ReleaseVersion': 'OB55',
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -396,7 +395,7 @@ def get_wishlist_info():
             'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 9; ASUS_Z01QD Build/PI)',
             'Connection': 'Keep-Alive',
             'Authorization': f'Bearer {token}',
-            'X-Unity-Version': '2018.4.11f1',
+            'X-Unity-Version': '2018.4.12f1',
             'X-GA': 'v1 1',
             'ReleaseVersion': 'OB55',
             'Content-Type': 'application/x-www-form-urlencoded',
