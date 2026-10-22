@@ -87,21 +87,21 @@ def extract_token_from_response(data, region):
     
     if "jwt_token" in data:
         return data["jwt_token"]
-    if "Token" in data:
-        return data["Token"]
+    if "token" in data:
+        return data["token"]
         
-    if data.get("success") is True and "Token" in data:
-        return data["Token"]
+    if data.get("success") is True and "token" in data:
+        return data["token"]
     
     if region == "BD":
         if data.get('status') in ['success', 'live']:
-            return data.get('Token')
+            return data.get('token')
     elif region in ["BR", "US", "SAC", "BD", "PK", "VN", "ME", "TH"]:
-        if 'Token' in data:
-            return data['Token']
+        if 'token' in data:
+            return data['token']
     else:
         if data.get('status') == 'success':
-            return data.get('Token')
+            return data.get('token')
     
     return None
 
@@ -120,7 +120,7 @@ def ensure_jwt_token_sync(region):
         print(f"[JWT] Token missing or expired for region {region}. Fetching...")
 
         # Updated API endpoint provided
-        url = "https://jwt-gen-ob55-lilac.vercel.app/token?uid=8051557932&pass=07EC011253809A40B2A0455BDC8F7A6E7541CC2283D3F5BE2E8C18C7C70CCF39"
+        url = "https://jwt-gen-ob55-lilac.vercel.app/token?uid=8051557932&password=07EC011253809A40B2A0455BDC8F7A6E7541CC2283D3F5BE2E8C18C7C70CCF39"
         try:
             response = requests.get(url, timeout=10)
             response.raise_for_status()
