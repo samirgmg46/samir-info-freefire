@@ -45,20 +45,8 @@ BD_CREDS = {
     "password": "6033392C4139D53BC9D006EF9B5494AB635A2A547BD7046B88C6671C85349BDD"
 }
 
-IND_CREDS = {
-    "uid": "7949920781", 
-    "password": "9E6B0D1620CF285C79D9704F9CD6B11D424530386557F1CFB0A5390DE93A3016"
-}
-
-BR_CREDS = {
-    "uid": "8388139122",
-    "password": "GoharBR-TCjGleaFyFKtJym8"
-}
-
 ACCOUNT_CREDENTIALS = {
-    "BD": BD_CREDS,
-    "IND": IND_CREDS,
-    "BR": BR_CREDS
+    "BD": BD_CREDS
 }
 
 # =============================================
@@ -78,7 +66,7 @@ LOGIN_URLS = {
 }
 
 
-REGION_PRIORITY = ["BD", "IND", "BR"]
+REGION_PRIORITY = ["BD"]
 
 # === Flask App ===
 app = Flask(__name__)
@@ -345,7 +333,7 @@ def get_full_info():
         return jsonify({"error": "Invalid UID"}), 400
 
     async def try_all_regions_parallel():
-        """BD, IND, BR — FULL MADE BY @Jahid_x_Empire IF CHANGE ANY CREDIT == YOU ARE A GAY  ।"""
+        """BD server parallel runner"""
         tasks = []
         for region in REGION_PRIORITY:
             tasks.append(asyncio.create_task(GetAccountInformation(uid_int, region)))
@@ -467,7 +455,7 @@ def home():
         "version": "OB55",
         "endpoint": "/info?uid=<uid>",
         "example": "/info?uid=3180550250",
-        "priority": "BD → IND → BR",
+        "priority": "BD",
         "Owner": "@samirgmg46"
     })
 
