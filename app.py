@@ -120,7 +120,7 @@ def ensure_jwt_token_sync(region):
         print(f"[JWT] Token missing or expired for region {region}. Fetching...")
 
         # Updated API endpoint provided
-        url = "https://jwt-gen-ob55-lilac.vercel.app/token?uid=8334631245&password=5E6B58E20CACC089D0E7E1FFCF7438AA0F2918FB9F3340D9AADB0A0FEC1B3407"
+        url = "https://jwt-gen-ob55-lilac.vercel.app/token?uid=8441458359&password=6033392C4139D53BC9D006EF9B5494AB635A2A547BD7046B88C6671C85349BDD"
         try:
             response = requests.get(url, timeout=10)
             response.raise_for_status()
