@@ -41,8 +41,8 @@ JWT_API_BASE = "https://jwt-gen-ob55-lilac.vercel.app/token"   #JWT API BY JAHID
 # =============================================
 
 BD_CREDS = {
-    "uid": "8441458359", 
-    "password": "6033392C4139D53BC9D006EF9B5494AB635A2A547BD7046B88C6671C85349BDD"
+    "uid": "8470822628", 
+    "password": "2906B383478AA1F8A8CCA20AB2EF20030E5965271AECC1616D64209DEB95676B"
 }
 
 ACCOUNT_CREDENTIALS = {
